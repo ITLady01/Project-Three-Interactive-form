@@ -3,12 +3,7 @@
 Treehouse Techdegree:
 FSJS Project 3 - Interactive Form
 ******************************************/                                                        
-/* This script contains all the functionality for the interactive form.
-   The JavaScript is organized by fieldset section, in the order it appears in the HTML.
-   After all section functionality is completed, the rest of the script contains form validation functionality
-*/
-//('#name').focus();
-//$('#other-title').hide();
+
 
 // ************************************ //
 //           BASIC INFO SECTION         //
