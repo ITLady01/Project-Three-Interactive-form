@@ -68,7 +68,7 @@ $('#design').change(() => {
 
 	$DivColor.show();
 	// Remove any lingering options
-	$ColorOptions.empty();
+	$SelectColor.empty();
 
 	// Only append appropriate group of options	
 	if (val === 'js puns') {
@@ -104,9 +104,9 @@ addActivityListener('npm', 100);
 
 // EFFECTS: adds a change listener to an activity checkbox,
 //          when checked, calculates the price of the total and updates the html text
-function addActivityListener(activityName, price, conflictName = '') {
+function addActivityListener(NameofActivity, price, conflictName = '') {
 
-	const $activity = $('.activities input[name=' + activityName + ']');
+	const $activity = $('.activities input[name=' + NameofActivity + ']');
 
 	$activity.change(() => {
 		if ($activity.is(':checked')) {
@@ -127,8 +127,8 @@ function addActivityListener(activityName, price, conflictName = '') {
 	});
 }
 
-// EFFECTS: toggles the activity to be enabled or disabled based on "enable" boolean
-function toggleActivity(activityName, enable) {
+// CHANGES: toggles the activity to be enabled or disabled based on "enable" boolean
+function toggleActivity(NameofActivity, enable) {
 
 	const $activity = $('.activities input[name=' + activityName + ']');
 
