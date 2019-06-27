@@ -1,12 +1,12 @@
 
-  /******************************************
+/******************************************
 Treehouse Techdegree:
 FSJS Project 3 - Interactive Form
-******************************************/                                                        
+******************************************/
 
 
 // ************************************ //
-//            FIRST SECTION         //
+//           JOB ROLE SECTION         //
 // ************************************ //
 
 /*** I created the three constant variables 
@@ -27,7 +27,7 @@ $otherTitle.remove();
 //I have added the if and else statements
 $title.change(() => {
 	const val = $('#title option').filter(':selected').val();
-	if(val === 'other') {
+	if (val === 'other') {
 		$title.parent().append($otherTitle);
 	}
 	else {
@@ -41,17 +41,15 @@ $title.change(() => {
 
 /***This is the const variables 
   1) Div Color is a constant and the value can't be changed this will pull the ID from the HTML file 
-  
- 
- 
- \
+ The rest of the variables set as constant and the infomation will be pulled
+
   ***/
 
 const $DivColor = $('#colors-js-puns');
 const $SelectColor = $('#color');
 const $ColorOptions = $('#color option');
-const $jsPunsOpts = $colorOpts.slice(0,3);
-const $iHeartJSOpts = $colorOpts.slice(3,6);
+const $jsPunsOpts = $ColorOptions.slice(0, 3);
+const $iHeartJSOpts = $ColorOptions.slice(3, 6);
 const designTypeRegEx = /\s*\(.*/;
 
 // Hide the color section
@@ -59,7 +57,7 @@ $DivColor.hide();
 
 // Change the text to only show the color name
 // i.e. Removes the text ' (JS Puns shirt only)' from each color
-for(let i = 0; i < $ColorOptions.length; i += 1) {
+for (let i = 0; i < $ColorOptions.length; i += 1) {
 	const colorName = $ColorOptions[i].innerHTML;
 	$ColorOptions[i].innerHTML = colorName.replace(designTypeRegEx, '');
 }
@@ -67,16 +65,16 @@ for(let i = 0; i < $ColorOptions.length; i += 1) {
 // On t-shirt design change, add the correct group of colors back
 $('#design').change(() => {
 	const val = $('#design option').filter(':selected').val();
-	
+
 	$DivColor.show();
 	// Remove any lingering options
-	$ColorOptions.remove();
+	$ColorOptions.empty();
 
 	// Only append appropriate group of options	
-	if(val === 'js puns') {
+	if (val === 'js puns') {
 		$SelectColor.append($jsPunsOpts);
 	}
-	else if(val === 'heart js') {
+	else if (val === 'heart js') {
 		$SelectColor.append($iHeartJSOpts);
 	}
 	else {
@@ -89,11 +87,11 @@ $('#design').change(() => {
 //    REGISTER FOR ACTIVITIES SECTION   //
 // ************************************ //
 //Created the two variables for this will pull from the div class total
-const $totalHTML = $('<div class="total"><p></p></div>');
+const $totalValues = $('<div class="total"><p></p></div>');
 let total = 0;
 
 // append html elements that displays the total cost of activities
-$('.activities').append($totalHTML);
+$('.activities').append($totalValues);
 
 // Adds all the listeners for the activities checkboxes
 addActivityListener('all', 200);
@@ -107,22 +105,22 @@ addActivityListener('npm', 100);
 // EFFECTS: adds a change listener to an activity checkbox,
 //          when checked, calculates the price of the total and updates the html text
 function addActivityListener(activityName, price, conflictName = '') {
-	
+
 	const $activity = $('.activities input[name=' + activityName + ']');
-	
+
 	$activity.change(() => {
-		if($activity.is(':checked')) {
+		if ($activity.is(':checked')) {
 			total += price;
 			$('.total p').text('Total: $' + total);
 			// in case of conflict, toggle the conflicting activity
-			if(conflictName !== '') {
+			if (conflictName !== '') {
 				toggleActivity(conflictName, false);
 			}
 		}
 		else {
 			total -= price;
 			$('.total p').text('Total: $' + total);
-			if(conflictName !== '') {
+			if (conflictName !== '') {
 				toggleActivity(conflictName, true);
 			}
 		}
@@ -131,10 +129,10 @@ function addActivityListener(activityName, price, conflictName = '') {
 
 // EFFECTS: toggles the activity to be enabled or disabled based on "enable" boolean
 function toggleActivity(activityName, enable) {
-	
+
 	const $activity = $('.activities input[name=' + activityName + ']');
-	
-	if(enable) {
+
+	if (enable) {
 		$activity.prop('disabled', false);
 		$activity.parent().removeClass('disabled');
 	}
@@ -166,7 +164,7 @@ $bitcoinDiv.hide();
 // On payment type change, display the correct payment type fields or info
 $payment.change(() => {
 	const val = $('#payment option').filter(':selected').val();
-	switch(val) {
+	switch (val) {
 		case 'select_method':
 			$ccDiv.hide();
 			$paypalDiv.hide();
