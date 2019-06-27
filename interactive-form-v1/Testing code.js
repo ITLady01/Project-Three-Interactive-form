@@ -37,12 +37,13 @@ This the function focus for Jquery and it will pull the Id "name" from the HTML
  // ************************************ //
  //         T-SHIRT INFO SECTION         //
  // ************************************ //
- 
+
+ //I have a list of variables the first varible is going to grab the #ID give 
  const $DivColor = $('#colors-js-puns');
  const $SelectColor = $('#color');
  const $ColorOptions = $('#color option');
- const $jsPunsOpts = $colorOpts.slice(0,3);
- const $iHeartJSOpts = $colorOpts.slice(3,6);
+ const $jsPunsOpts = $ColorOptions.slice(0,3);
+ const $iHeartJSOpts = $ColorOptions.slice(3,6);
  const designTypeRegEx = /\s*\(.*/;
  
  // Hide the color section
