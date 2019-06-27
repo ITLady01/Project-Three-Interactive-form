@@ -39,6 +39,14 @@ $title.change(() => {
 //         T-SHIRT INFO SECTION         //
 // ************************************ //
 
+/***This is the const variables 
+  1) Div Color is a constant and the value can't be changed this will pull the ID from the HTML file 
+  
+ 
+ 
+ \
+  ***/
+
 const $DivColor = $('#colors-js-puns');
 const $SelectColor = $('#color');
 const $ColorOptions = $('#color option');
