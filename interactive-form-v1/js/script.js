@@ -104,9 +104,9 @@ addActivityListener('npm', 100);
 
 // EFFECTS: adds a change listener to an activity checkbox,
 //          when checked, calculates the price of the total and updates the html text
-function addActivityListener(NameofActivity, price, NameOfConflict = '') {
+function addActivityListener(ActivityName, price, NameOfConflict = '') {
 
-	const $activity = $('.activities input[name=' + NameofActivity + ']');
+	const $activity = $('.activities input[name=' + ActivityName + ']');
 
 	$activity.change(() => {
 		if ($activity.is(':checked')) {
@@ -128,9 +128,9 @@ function addActivityListener(NameofActivity, price, NameOfConflict = '') {
 }
 
 // CHANGES: toggles the activity to be enabled or disabled based on "enable" boolean
-function toggleActivity(NameofActivity, enable) {
+function toggleActivity(ActivityName, enable) {
 
-	const $activity = $('.activities input[name=' + NameOfActivity + ']');
+	const $activity = $('.activities input[name=' + ActivityName + ']');
 
 	if (enable) {
 		$activity.prop('disabled', false);
