@@ -354,7 +354,7 @@ function register() {
 	if ($('#payment option').filter(':selected').val() === 'paypal') {
 		window.location.href = "https://www.paypal.com";
 	}
-	else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
+	 if ($('#payment option').filter(':selected').val() === 'bitcoin') {
 		window.location.href = "https://bitcoin.org";
 }
 	
