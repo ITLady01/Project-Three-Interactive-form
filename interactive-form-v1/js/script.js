@@ -165,6 +165,7 @@ $bitcoinDiv.hide();
 $payment.change(() => {
 	const val = $('#payment option').filter(':selected').val();
 	switch (val) {
+
 		case 'select_method':
 			$ccDiv.hide();
 			$paypalDiv.hide();
@@ -176,11 +177,13 @@ $payment.change(() => {
 			$bitcoinDiv.hide();
 			break;
 		case 'paypal':
+			console.log("In paypal case");
 			$ccDiv.hide();
 			$paypalDiv.show();
 			$bitcoinDiv.hide();
 			break;
 		case 'bitcoin':
+			console.log("In paypal case");
 			$ccDiv.hide();
 			$paypalDiv.hide();
 			$bitcoinDiv.show();
@@ -306,6 +309,9 @@ function validateForm() {
 
 	// Only check for credit card validation if "Credit Card" payment type is selected
 	if ($('#payment option').filter(':selected').val() === 'credit card') {
+
+		// console.log("CREDIT CARD!!");
+
 		if (!isValidInput($ccInput, ccRegEx, ccVal, 'card number')) {
 			isValid = false;
 		}
@@ -317,6 +323,15 @@ function validateForm() {
 		}
 	}
 
+	else if ($('#payment option').filter(':selected').val() === 'paypal') {
+		isValid = false;
+		
+	} 
+	
+	else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
+		isValid = false;
+		
+	}
 	// Return the flag, will be false if any of the tests failed
 	return isValid;
 }
@@ -333,3 +348,15 @@ $('form').submit((ev) => {
 		ev.preventDefault();
 	}
 });
+
+function register() {
+	
+	if ($('#payment option').filter(':selected').val() === 'paypal') {
+		window.location.href = "https://www.paypal.com";
+	}
+	else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
+		window.location.href = "https://bitcoin.org";
+}
+	
+
+}
