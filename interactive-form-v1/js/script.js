@@ -308,8 +308,6 @@ function validateForm() {
 	// Only check for credit card validation if "Credit Card" payment type is selected
 	if ($('#payment option').filter(':selected').val() === 'credit card') {
 
-		// console.log("CREDIT CARD!!");
-
 		if (!isValidInput($ccInput, ccRegEx, ccVal, 'card number')) {
 			isValid = false;
 		}
