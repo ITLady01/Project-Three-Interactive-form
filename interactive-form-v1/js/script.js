@@ -121,7 +121,7 @@ function addActivityListener(ActivityName, price, NameOfConflict = '') {
 			total -= price;
 			$('.total p').text('Total: $' + total);
 			if (NameOfConflict !== '') {
-				toggleActivity(NameofConflict, true);
+				toggleActivity(NameOfConflict, true);
 			}
 		}
 	});
@@ -177,13 +177,11 @@ $payment.change(() => {
 			$bitcoinDiv.hide();
 			break;
 		case 'paypal':
-			console.log("In paypal case");
 			$ccDiv.hide();
 			$paypalDiv.show();
 			$bitcoinDiv.hide();
 			break;
 		case 'bitcoin':
-			console.log("In paypal case");
 			$ccDiv.hide();
 			$paypalDiv.hide();
 			$bitcoinDiv.show();
@@ -349,7 +347,7 @@ $('form').submit((ev) => {
 	}
 });
 
-function register() {
+/***function register() {
 	
 	if ($('#payment option').filter(':selected').val() === 'paypal') {
 		window.location.href = "https://www.paypal.com";
@@ -359,4 +357,4 @@ function register() {
 }
 	
 
-}
+}/***
