@@ -208,6 +208,7 @@ function isValidInput($input, regEx, val, message = '') {
 
 		if ($input.prev().filter('.error-message').length !== 0) {
 			$input.prev().remove();
+			
 		}
 
 		return true;
@@ -272,8 +273,7 @@ function realtimeValidation() {
 // EFFECTS: Calls input validation functions and returns true if all pass
 //          If one or more validation functions fail, the function returns false
 function validateForm() {
-
-	const nameRegEx = /[a-zA-Z]{1,}/;
+		const nameRegEx = /[a-zA-Z]{1,}/;
 	const nameVal = $nameInput.val();
 
 	const $emailInput = $('#mail');
@@ -319,15 +319,15 @@ function validateForm() {
 		}
 	}
 
-	else if ($('#payment option').filter(':selected').val() === 'paypal') {
-		isValid = false;
-		
-	} 
-	
-	else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
-		isValid = false;
-		
-	}
+	// else if ($('#payment option').filter(':selected').val() === 'paypal') {
+	// 	isValid = false;
+
+	// }
+
+	// else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
+	// 	isValid = false;
+
+	// }
 	// Return the flag, will be false if any of the tests failed
 	return isValid;
 }
@@ -336,23 +336,22 @@ function validateForm() {
 realtimeValidation();
 
 // Listener on form submission, validates form fields, otherwise, prevents submission
-$('form').submit((ev) => {
-	if (validateForm()) {
-		return;
+$('form').submit ((ev) => {
+	if (validateForm() == true) {
+		window.location.reload();                                                        
+
+	} else {
+		ev.preventDefault();                                                            
 	}
-	else {
-		ev.preventDefault();
-	}
+	return
 });
 
-/***function register() {
-	
-	if ($('#payment option').filter(':selected').val() === 'paypal') {
-		window.location.href = "https://www.paypal.com";
-	}
-	 if ($('#payment option').filter(':selected').val() === 'bitcoin') {
-		window.location.href = "https://bitcoin.org";
-}
-	
+// function register() {
 
-}***/
+// 	if ($('#payment option').filter(':selected').val() === 'paypal') {
+// 		window.location.href = "https://www.paypal.com";
+// 	}
+// 	if ($('#payment option').filter(':selected').val() === 'bitcoin') {
+// 		window.location.href = "https://bitcoin.org";
+// 	}
+// }
