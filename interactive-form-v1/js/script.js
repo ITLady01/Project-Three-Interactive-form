@@ -121,7 +121,7 @@ function addActivityListener(ActivityName, price, NameOfConflict = '') {
 			total -= price;
 			$('.total p').text('Total: $' + total);
 			if (NameOfConflict !== '') {
-				toggleActivity(NameofConflict, true);
+				toggleActivity(NameOfConflict, true);
 			}
 		}
 	});
@@ -177,13 +177,11 @@ $payment.change(() => {
 			$bitcoinDiv.hide();
 			break;
 		case 'paypal':
-			console.log("In paypal case");
 			$ccDiv.hide();
 			$paypalDiv.show();
 			$bitcoinDiv.hide();
 			break;
 		case 'bitcoin':
-			console.log("In paypal case");
 			$ccDiv.hide();
 			$paypalDiv.hide();
 			$bitcoinDiv.show();
@@ -310,8 +308,6 @@ function validateForm() {
 	// Only check for credit card validation if "Credit Card" payment type is selected
 	if ($('#payment option').filter(':selected').val() === 'credit card') {
 
-		// console.log("CREDIT CARD!!");
-
 		if (!isValidInput($ccInput, ccRegEx, ccVal, 'card number')) {
 			isValid = false;
 		}
@@ -349,7 +345,7 @@ $('form').submit((ev) => {
 	}
 });
 
-function register() {
+/***function register() {
 	
 	if ($('#payment option').filter(':selected').val() === 'paypal') {
 		window.location.href = "https://www.paypal.com";
@@ -359,4 +355,4 @@ function register() {
 }
 	
 
-}
+}/***
