@@ -15,7 +15,7 @@ button {
 }
 
 body {
-  font: 1em/1.5;
+  font: 2em/2.5;
   color: rgba(13, 13, 14, 0.9);
 	background: #e6f0f5;
 }
@@ -64,7 +64,7 @@ button {
 legend {
 	font-weight: 500;
 	padding-top: .5em;
-	border-top: 2px solid rgba(3, 9, 12, 0.6);
+	border-top: 2px solid rgba(23, 44, 54, 0.6);
 	margin-bottom: 1.125em;
 }
 
