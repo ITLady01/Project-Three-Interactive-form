@@ -317,15 +317,6 @@ function validateForm() {
 		}
 	}
 
-	// else if ($('#payment option').filter(':selected').val() === 'paypal') {
-	// 	isValid = false;
-
-	// }
-
-	// else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
-	// 	isValid = false;
-
-	// }
 	// Return the flag, will be false if any of the tests failed
 	return isValid;
 }
