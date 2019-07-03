@@ -333,7 +333,7 @@ $('form').submit((ev) => {
 		ev.preventDefault();
 	}
 });
-
+// console.log(validateForm);
 // function register() {
 
 // 	if ($('#payment option').filter(':selected').val() === 'paypal') {
