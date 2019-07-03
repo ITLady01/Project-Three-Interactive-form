@@ -334,14 +334,13 @@ function validateForm() {
 realtimeValidation();
 
 // Listener on form submission, validates form fields, otherwise, prevents submission
-$('form').submit ((ev) => {
-	if (validateForm() == true) {
-		window.location.reload();                                                        
-
-	} else {
-		ev.preventDefault();                                                            
+$('form').submit((ev) => {
+	if(validateForm()) {
+		return;
 	}
-	return
+	else {
+		ev.preventDefault();
+	}
 });
 
 // function register() {
