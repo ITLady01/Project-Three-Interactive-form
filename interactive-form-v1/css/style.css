@@ -56,9 +56,13 @@ button {
 	
 }
 p.error-message {
-	color: red
+	color: darkblue
 }
 
+p.error-message {
+	font-size: 1.2em;
+	
+}
 fieldset {
 	margin-top: 1.5em;
 }
@@ -206,4 +210,3 @@ option {
 		clear: both;
 	}
 }
-<p class="error-message">Please enter your email</p>

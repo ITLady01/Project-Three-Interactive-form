@@ -1,4 +1,3 @@
-
 /******************************************
 Treehouse Techdegree:
 FSJS Project 3 - Interactive Form
@@ -42,7 +41,6 @@ $title.change(() => {
 /***This is the const variables 
   1) Div Color is a constant and the value can't be changed this will pull the ID from the HTML file 
  The rest of the variables set as constant and the infomation will be pulled
-
   ***/
 
 const $DivColor = $('#colors-js-puns');
@@ -319,15 +317,6 @@ function validateForm() {
 		}
 	}
 
-	// else if ($('#payment option').filter(':selected').val() === 'paypal') {
-	// 	isValid = false;
-
-	// }
-
-	// else if ($('#payment option').filter(':selected').val() === 'bitcoin') {
-	// 	isValid = false;
-
-	// }
 	// Return the flag, will be false if any of the tests failed
 	return isValid;
 }
@@ -336,16 +325,16 @@ function validateForm() {
 realtimeValidation();
 
 // Listener on form submission, validates form fields, otherwise, prevents submission
-$('form').submit ((ev) => {
-	if (validateForm() == true) {
-		window.location.reload();                                                        
-
-	} else {
-		ev.preventDefault();                                                            
+$('form').submit((ev) => {
+	if(validateForm()) {
+		return;
+	}
+	else {
+		ev.preventDefault();
 	}
 	return
 });
-
+// console.log(validateForm); tested the code and its
 // function register() {
 
 // 	if ($('#payment option').filter(':selected').val() === 'paypal') {
