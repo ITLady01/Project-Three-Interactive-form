@@ -47,7 +47,7 @@ const $DivColor = $('#colors-js-puns');
 const $SelectColor = $('#color');
 const $ColorOptions = $('#color option');
 const $jsPunsOpts = $ColorOptions.slice(0, 3);
-const $iHeartJSOpts = $ColorOptions.slice(3, 6);
+const $iHeartJSOpts = $ColorOptions.slice(3, 6);totalcost
 const designTypeRegEx = /\s*\(.*/;
 
 // Hide the color section
