@@ -17,7 +17,7 @@ const $nameInput = $('#name');
 const $title = $('#title');
 const $otherTitle = $('#other-title');
 
-$nameInput.focus();// tested the code and it worked
+$nameInput.focus(); // tested the code and it worked
 
 // Remove the Other Title input field once document loads
 $otherTitle.remove();
@@ -28,8 +28,7 @@ $title.change(() => {
 	const val = $('#title option').filter(':selected').val();
 	if (val === 'other') {
 		$title.parent().append($otherTitle);
-	}
-	else {
+	} else {
 		$otherTitle.remove();
 	}
 });
@@ -47,7 +46,7 @@ const $DivColor = $('#colors-js-puns');
 const $SelectColor = $('#color');
 const $ColorOptions = $('#color option');
 const $jsPunsOpts = $ColorOptions.slice(0, 3);
-const $iHeartJSOpts = $ColorOptions.slice(3, 6);totalcost
+const $iHeartJSOpts = $ColorOptions.slice(3, 6);
 const designTypeRegEx = /\s*\(.*/;
 
 // Hide the color section
@@ -71,11 +70,9 @@ $('#design').change(() => {
 	// Only append appropriate group of options	
 	if (val === 'js puns') {
 		$SelectColor.append($jsPunsOpts);
-	}
-	else if (val === 'heart js') {
+	} else if (val === 'heart js') {
 		$SelectColor.append($iHeartJSOpts);
-	}
-	else {
+	} else {
 		$DivColor.hide();
 	}
 	$SelectColor.prop('selectedIndex', 0);
@@ -114,8 +111,7 @@ function addActivityListener(ActivityName, price, NameOfConflict = '') {
 			if (NameOfConflict !== '') {
 				toggleActivity(NameOfConflict, false);
 			}
-		}
-		else {
+		} else {
 			total -= price;
 			$('.total p').text('Total: $' + total);
 			if (NameOfConflict !== '') {
@@ -133,8 +129,7 @@ function toggleActivity(ActivityName, enable) {
 	if (enable) {
 		$activity.prop('disabled', false);
 		$activity.parent().removeClass('disabled');
-	}
-	else {
+	} else {
 		$activity.prop('disabled', true);
 		$activity.parent().addClass('disabled');
 	}
@@ -206,19 +201,17 @@ function isValidInput($input, regEx, val, message = '') {
 
 		if ($input.prev().filter('.error-message').length !== 0) {
 			$input.prev().remove();
-			
+
 		}
 
 		return true;
-	}
-	else {
+	} else {
 		$input.addClass('error');
 
 		// Check for empty versus malformatted input, display appropriate message
 		if (val === '') {
 			message = ('Please enter your ').concat(message);
-		}
-		else {
+		} else {
 			message = 'Your ' + message + ' is formatted incorrectly'
 		}
 
@@ -245,8 +238,7 @@ function isAttendingActivity() {
 	if ($activities.filter(':checked').length) {
 		$('.activities > .error-message').remove();
 		return true;
-	}
-	else {
+	} else {
 		if ($('.activities > .error-message').length === 0)
 			$('.activities legend').after($errorHTML);
 		return false;
@@ -263,15 +255,19 @@ function realtimeValidation() {
 	const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 	// These listeners bind to input events, and check the validity of each input
-	$nameInput.bind('input', () => { isValidInput($nameInput, nameRegEx, $nameInput.val(), 'name') });
-	$emailInput.bind('input', () => { isValidInput($emailInput, emailRegEx, $emailInput.val(), 'email') });
+	$nameInput.bind('input', () => {
+		isValidInput($nameInput, nameRegEx, $nameInput.val(), 'name')
+	});
+	$emailInput.bind('input', () => {
+		isValidInput($emailInput, emailRegEx, $emailInput.val(), 'email')
+	});
 }
 
 
 // EFFECTS: Calls input validation functions and returns true if all pass
 //          If one or more validation functions fail, the function returns false
 function validateForm() {
-		const nameRegEx = /[a-zA-Z]{1,}/;
+	const nameRegEx = /[a-zA-Z]{1,}/;
 	const nameVal = $nameInput.val();
 
 	const $emailInput = $('#mail');
@@ -326,10 +322,9 @@ realtimeValidation();
 
 // Listener on form submission, validates form fields, otherwise, prevents submission
 $('form').submit((ev) => {
-	if(validateForm()) {
+	if (validateForm()) {
 		return;
-	}
-	else {
+	} else {
 		ev.preventDefault();
 	}
 	return
